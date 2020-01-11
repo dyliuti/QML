@@ -1,0 +1,9 @@
+Arrow f04d
+settings f8ba
+nav button f35c
+more f1d8
+plus f415
+clock f150
+pencil fc92
+calendar fb42
+file f224
