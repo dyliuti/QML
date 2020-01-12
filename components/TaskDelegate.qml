@@ -2,7 +2,7 @@ import QtQuick 2.11
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.3
 
-// Delegate是可以用
+// Delegate是展示一个Item的模板
 Component{
     Rectangle{
         id: taskDelegateItem
@@ -34,7 +34,7 @@ Component{
                         height: 12
                         radius: height / 2
                         color: "transparent"
-                        border.color: rand_color[ind % 7]  // "orange" rand_color在main中定义为属性了
+                        border.color: taskUI.rand_color[ind%7] //非顶层role或item，得加上前缀才能访问这个附加属性
                         border.width: 1
                     }
 
@@ -74,12 +74,14 @@ Component{
                 }
             }
 
+            // 拉伸时才可见,文字记录
             Rectangle{
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.leftMargin: 18
                 color: "transparent"
-                visible: taskDelegateItem.expanded  // 拉伸时才可见
+
+                visible: taskDelegateItem.expanded
 
                 TextArea {
                     id: tArea
@@ -99,10 +101,9 @@ Component{
                         }
                     }
                 }
-
-
             }
-// 这个到底有没显示
+
+            // 拉伸时才可见,右下角4个字体图标
             Rectangle{
                 Layout.fillWidth: true
                 Layout.preferredHeight: 48

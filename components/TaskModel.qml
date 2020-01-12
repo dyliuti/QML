@@ -2,7 +2,7 @@ import QtQuick 2.11
 
 ListModel{
     ListElement{
-        ind:0
+        ind: 0
         section: "将做"
         title: "Hello，我是dyliuti"
     }

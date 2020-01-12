@@ -4,14 +4,16 @@ import QtQuick.Layouts 1.3
 import "components" as Comp
 
 ApplicationWindow{
+    id: taskUI
     visible: true
     width: 360
     height: 600
-//"#ff424c"
+
     FontLoader {id: mainFont; source: "fonts/materialdesignicons-webfont.ttf"}
-    property var rand_color: ["dodgerblue", "white", "#00c1ed", "#ff9700", "#00a8b", "yellow", "#00ed06"]
+    property var rand_color: ["dodgerblue","white", "#00c1ed", "#ff9700", "#00a8b", "yellow", "#00ed06"]
 
     Rectangle{
+
         anchors.fill:parent
         color: "#191920"
 
@@ -66,7 +68,7 @@ ApplicationWindow{
             }
 
             Comp.ButtonPrimary{
-                Layout.fillWidth:true
+                Layout.fillWidth: true
                 Layout.preferredHeight: 48
             }
         }

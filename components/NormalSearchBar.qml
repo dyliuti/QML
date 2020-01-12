@@ -22,12 +22,38 @@ Rectangle{
             textSize: 20
         }
 
-        Text{
+        TextInput{
+            id: textInput
             Layout.fillWidth: true
-            text: "查询"
+            inputMask: "请输入查询文本"
             font.pixelSize: 12
             color: "white"
+            opacity: 0.3
 
+            TextArea{
+                anchors.verticalCenter: parent.verticalCenter
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                color: "white"
+                selectByMouse: true
+                selectionColor: "orange"        // 选中区域的前景色
+                selectedTextColor: "white"      // 选中的字体颜色
+                cursorDelegate: Component{      // 将光标变为白色
+                    Rectangle{
+                        width: 1
+                        height: 1
+                        color: "white"
+                    }
+                }
+            }
+
+            MouseArea{
+                anchors.fill: textInput
+                onClicked: {
+                    textInput.inputMask = ""
+                    textInput.opacity = 1
+                }
+            }
         }
 
         Rectangle{              // Image placeholder
