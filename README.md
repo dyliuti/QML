@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: images
+---
+
 **“纸上得来终觉浅，绝知此事要躬行。”  —— 陆游**
 
 **"Practice，practice，practice and summary makes perfect" —— dyliuti**
@@ -26,8 +30,9 @@
 
 **运行结果：**
 
-![纯QML](C:\Users\YMW\Desktop\纯QML.png)
+<img src="C:\Git\QML\images\纯QML.png" alt="纯QML" style="zoom:50%;" />
 
-点击三个点展开后如下：
+点击“三个点”展开后如下：
 
-![纯QML2](C:\Users\YMW\Desktop\纯QML2.png)
+<img src="C:\Git\QML\images\纯QML2.png" alt="纯QML2" style="zoom:50%;" />
+
