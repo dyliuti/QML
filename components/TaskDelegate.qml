@@ -1,5 +1,5 @@
 import QtQuick 2.11
-import QtQuick.Controls 2.5
+import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 
 // Delegate是展示一个Item的模板
@@ -29,8 +29,9 @@ Component{
 
                     // 圆圈离左边距离
                     Rectangle{
+                        id: circle
                         Layout.leftMargin: 18
-                        width: 13
+                        width: 12
                         height: 12
                         radius: height / 2
                         color: "transparent"
@@ -42,20 +43,14 @@ Component{
                     Column{
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.topMargin: 18
+                        Layout.topMargin: 12
 
                         Text{
                             text: title       // model的属性
                             leftPadding: 18
+                            anchors.verticalCenter: circle.verticalCenter
                             // horizontalAlignment: Text.AlignLeft   // 这句不需要，外面布局加里面条件已经左对齐了
                             color: "white"
-                        }
-
-                        Text{
-                            text: "Project: " + section
-                            color: "#727272"
-                            leftPadding: 18
-                            visible: taskDelegateItem.expanded
                         }
                     }
 
@@ -70,7 +65,6 @@ Component{
                             taskDelegateItem.expanded = !taskDelegateItem.expanded
                         }
                     }
-
                 }
             }
 
@@ -78,7 +72,7 @@ Component{
             Rectangle{
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Layout.leftMargin: 18
+                Layout.leftMargin: 18 + 12
                 color: "transparent"
 
                 visible: taskDelegateItem.expanded
@@ -91,8 +85,11 @@ Component{
                     selectedTextColor: "white"      // 选中的字体颜色
                     padding: 0
                     topPadding: 6
-                    font.pixelSize: 12
+                    //font.pixelSize: 12
                     color: "#727272"
+                    text: "Project: " + section
+                    leftPadding: 18
+
                     cursorDelegate: Component{
                         Rectangle{
                             width: 1
